@@ -69,6 +69,7 @@ class CircularLinkedList:
 cllist = CircularLinkedList()
 
 # created linked list will be 5->25->15->10->15
+print("Order of cities according to city_distance_list:\n")
 cllist.push(15)
 cllist.push(10)
 cllist.push(15)
@@ -88,6 +89,52 @@ def cycle(iterable):
             yield element
 
 # loops forever though
-pool = cycle(city_distance_list)
-for i in pool:
-    print(i)
+# pool = cycle(city_distance_list)
+# for i in pool:
+#     print(i)
+
+# Method 3 to traverse: whatever this is
+def prints(a, n, ind):
+    # create auxillary array of twice size
+    b = [None] * 2 * n
+    i = 0
+
+    # copy a[] and b[] two times
+    while i < n:
+        b[i] = b[n + i] = a[i]
+        i = i + 1
+
+    i = ind
+
+    # print from ind-th index to (n+i)th index
+    while i < n + ind:
+        print(b[i], end = "\n")
+        time.sleep(1)
+        i = i + 1
+
+# Driver Code
+a = [5, 25, 15, 10, 15]
+n = len(a)
+ind = int(input("Enter starting city(0-4): "))
+print("Order of cities:\n")
+prints(a, n, ind)
+
+# Program Output
+# Algorithm 1
+#
+# Enter mpg (positive integer): 10
+# Order of cities according to city_distance_list:
+
+# 5
+# 25
+# 15
+# 10
+# 15
+# Enter starting city(0-4): 3
+# Order of cities:
+
+# 10
+# 15
+# 5
+# 25
+# 15
