@@ -1,0 +1,42 @@
+
+# Algorithm 1
+
+city_distance_list array
+fuel_gallons array
+miles_per_gallon integer
+
+NOTES---------------------------------------------------------------------------
+# if mpg * fuel_gallons[i] >= city_distance_list[i + 1]
+# and fuel_gallons[i] > 0
+# recursive function to continue the next city and the next one after???
+# we want our fuel * mpg to be able to cover the distance of the next city
+# AND the starting city's fuel must be greater than 0
+# in order to be able to go to each city and back to the starting city
+#
+# mpg = 10
+# city index:              0  1   2   3   4
+# distance to next city = [5, 25, 15, 10, 15]
+# fuel =                  [1, 2,  1,  0,  3]
+#
+# STARTING CITY | MILES LEFT (mpg*fuel) + NEXT CITY FUEL >= NEXT CITY DISTANCE
+# ------------------------------------------------------------------------------
+# city 0        | 0 + 10(1) = 10 < 25 '''not enough fuel for city 1'''
+# city 1        | 0 + 10(2) = 20 > 15, 5 + 10(1) = 15 > 10, 5 + 10(0) = 5 < 15 '''not enough fuel for city 4'''
+# city 2        | 0 + 10(1) = 10 = 10, 0 + 10(0) = 0 < 15 '''not enough fuel for city 4'''
+# city 3        | 0 + 10(0) = 0 < 15 '''not enough fuel for city 4'''
+# city 4        | 0 + 10(3) = 30 > 5, 25 + 10(1) = 35 > 25, 10 + 10(2) = 30 > 15, 15 + 10(1) = 25 > 10,
+#               | 15 + 10(0) = 15 = 15 '''back at city 4 :D'''
+#
+# initial miles = 0
+# miles = (miles_per_gallon * fuel_gallons[i])
+# next_city_fuel = (miles_per_gallon * fuel_gallons[i + 1])
+#
+# loop this statement with either for or while
+# if miles + next_city_fuel >= city_distance_list[i + 1]
+#   traverse through next node
+#
+# else
+#   print("Not enough miles to travel to next city\n")
+#   return miles + next_city_fuel
+#
+# singly linked list implementation most likely
