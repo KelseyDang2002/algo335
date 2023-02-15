@@ -10,8 +10,8 @@ print("Algorithm 1\n")
 city_distance_list = [5, 25, 15, 10, 15]
 fuel_gallons = [1, 2, 1, 0, 3]
 miles_per_gallon = int(input("Enter mpg (positive integer): "))
-miles = (miles_per_gallon * fuel_gallons[i])
-next_city_fuel = (miles_per_gallon * fuel_gallons[i + 1])
+# miles = (miles_per_gallon * fuel_gallons[ind])
+# next_city_fuel = (miles_per_gallon * fuel_gallons[ind + 1])
 
 # i = number of cities
 # num_cities = int(input("Enter the number of cities: "))
@@ -129,11 +129,13 @@ def traverse(a, n, ind):
 # Driver Code
 a = [5, 25, 15, 10, 15]
 n = len(a)
+miles = (miles_per_gallon * fuel_gallons[ind])
+next_city_fuel = (miles_per_gallon * fuel_gallons[ind + 1])
 ind = int(input("Enter starting city(0-4): "))
 print("Order of cities:\n")
 #prints(a, n, ind)
 for ind in a:
-    if miles + next_city_fuel >= city_distance_list[i + 1]:
+    if miles + next_city_fuel >= a[ind + 1]:
         traverse(a, n, ind)
 
     else:
