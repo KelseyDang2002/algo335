@@ -93,7 +93,8 @@ def cycle(iterable):
 # for i in pool:
 #     print(i)
 
-# Method 3 to traverse: whatever this is
+# Method 3 to traverse: circular array
+# takes O(n) time but takes O(n) extra space
 def prints(a, n, ind):
     # create auxillary array of twice size
     b = [None] * 2 * n
@@ -112,12 +113,24 @@ def prints(a, n, ind):
         time.sleep(1)
         i = i + 1
 
+# Method 3.1 to traverse: circular array
+# circular array without using extra memory space
+# takes O(n) time and O(1) extra space
+def traverse(a, n, ind):
+    i = ind
+
+    while i < n + ind:
+        print(a[i % n], end = "\n")
+        time.sleep(1)
+        i = i + 1
+
 # Driver Code
 a = [5, 25, 15, 10, 15]
 n = len(a)
 ind = int(input("Enter starting city(0-4): "))
 print("Order of cities:\n")
-prints(a, n, ind)
+#prints(a, n, ind)
+traverse(a, n, ind)
 
 # Program Output
 # Algorithm 1
