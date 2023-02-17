@@ -1,15 +1,67 @@
 # Name: Kelsey Dang
-# Due Date: 2/25/23
+# Due Date: 2/26/23
 # Filename: p1a1.py
 # Project Name: Project 1 Algorithm 1
 
 import time
+import itertools
 
 print("Algorithm 1\n")
 
-city_distance_list = [5, 25, 15, 10, 15]
-fuel_gallons = [1, 2, 1, 0, 3]
+city_distance_list = []
+c = len(city_distance_list)
+fuel_list = []
+f = len(fuel_list)
 miles_per_gallon = int(input("Enter mpg (positive integer): "))
+
+print("\n")
+
+for i in range(5):
+    city_distance = int(input("\tEnter city distance followed by <enter>: "))
+    city_distance_list.append(city_distance)
+
+print("\n")
+
+for i in range(5):
+    fuel = int(input("\tEnter available fuel in each city followed by <enter>: "))
+    fuel_list.append(fuel)
+
+print("\n")
+print(city_distance_list)
+print(fuel_list)
+
+def printTour(arr,n):
+
+    # Consider first petrol pump as starting point
+    start = 0
+    # These two variable will keep tracking if there is
+    # surplus(s) or deficit(d) of petrol in the truck
+    s = 0          # petrol available the truck till now
+    d = 0        # deficit of petrol till visiting this petrol pump
+
+    # Start from the first petrol pump and complete one loop
+    # of visiting all the petrol pumps and keep updating s and d at each pump
+    for i in range(n):
+        s += arr[i][0] - arr[i][1]
+        if s < 0:            # the truck has a deficit of petrol
+            start = i+1        # change the starting point
+            d += s            # storing the deficit of petrol till current petrol pump
+            s = 0            # starting again from new station
+
+    # when we reach first petrol pump again and sum of the petrol available at the truck
+    # and the petrol deficit till now is 0 or more petrol then return the starting point
+    # else return -1
+    return start if (s+d)>=0 else -1
+
+
+# Driver program to test above function
+arr = [[6,4], [3,6], [7,3]]
+start = printTour(arr,3)
+if start == -1:
+    print("No Solution Possible !!!")
+else:
+    print("start = {}".format(start))
+
 # miles = (miles_per_gallon * fuel_gallons[ind])
 # next_city_fuel = (miles_per_gallon * fuel_gallons[ind + 1])
 
@@ -24,7 +76,7 @@ miles_per_gallon = int(input("Enter mpg (positive integer): "))
 # print("Shortest distance: ", min(city_distance_list))
 
 # best case: minimum distance of next city + maximum next city gallon?
-
+'''
 # Method 1 to traverse: circular linked list
 # structure for a Node
 class Node:
@@ -141,7 +193,7 @@ for ind in a:
     else:
         print("Not enough miles to travel to next city.\n")
         print("Miles left: ", miles + next_city_fuel)
-
+'''
 # Program Output
 # Algorithm 1
 #
