@@ -40,3 +40,14 @@ NOTES---------------------------------------------------------------------------
 #   return miles + next_city_fuel
 #
 # singly linked list implementation most likely
+
+
+Algorithm 2
+
+person1_schedule
+person1_daily
+
+person2_schedule
+person2_daily
+
+duration

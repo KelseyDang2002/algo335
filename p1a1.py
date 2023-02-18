@@ -9,58 +9,61 @@ import itertools
 print("Algorithm 1\n")
 
 city_distance_list = []
-c = len(city_distance_list)
 fuel_list = []
-f = len(fuel_list)
-miles_per_gallon = int(input("Enter mpg (positive integer): "))
 
-print("\n")
+city_distance_list = [int(i) for i in input("\tEnter city distances: ").split()]
 
-for i in range(5):
-    city_distance = int(input("\tEnter city distance followed by <enter>: "))
-    city_distance_list.append(city_distance)
+fuel_list = [int(i) for i in input("\tEnter fuel for each city: ").split()]
 
-print("\n")
+miles_per_gallon = int(input("\tEnter miles per gallon: "))
 
-for i in range(5):
-    fuel = int(input("\tEnter available fuel in each city followed by <enter>: "))
-    fuel_list.append(fuel)
+print("\ndistance: ", city_distance_list)
+print("fuel: ", fuel_list)
+print("mpg: ", miles_per_gallon)
 
-print("\n")
-print(city_distance_list)
-print(fuel_list)
-
-def printTour(arr,n):
-
-    # Consider first petrol pump as starting point
+def path(city_distance_list, fuel_list, miles_per_gallon):
     start = 0
-    # These two variable will keep tracking if there is
-    # surplus(s) or deficit(d) of petrol in the truck
-    s = 0          # petrol available the truck till now
-    d = 0        # deficit of petrol till visiting this petrol pump
 
-    # Start from the first petrol pump and complete one loop
-    # of visiting all the petrol pumps and keep updating s and d at each pump
-    for i in range(n):
-        s += arr[i][0] - arr[i][1]
-        if s < 0:            # the truck has a deficit of petrol
-            start = i+1        # change the starting point
-            d += s            # storing the deficit of petrol till current petrol pump
-            s = 0            # starting again from new station
+    for i in range(5):
+        if (miles_per_gallon * fuel_list[i]) >= city_distance_list[i + 1]:
+            start = i
+            break
 
-    # when we reach first petrol pump again and sum of the petrol available at the truck
-    # and the petrol deficit till now is 0 or more petrol then return the starting point
-    # else return -1
-    return start if (s+d)>=0 else -1
+    current_miles = 0
+
+    for i in range(start):
+        current_miles += (miles_per_gallon * fuel_list[i]) - city_distance_list[i + 1]
+
+        if (current_miles < 0):
+            i += 1
+
+            while (i < 5):
+                if (miles_per_gallon * fuel_list[i]) >= city_distance_list[i + 1]:
+                    start = i
+                    current_miles = 0
+                    break
+                i += 1
+
+        else:
+            i += 1
+
+    if (current_miles < 0):
+        return -1
+
+    for i in range(start):
+        current_miles += (miles_per_gallon * fuel_list[i]) - city_distance_list[i + 1]
+
+        if (current_miles < 0):
+            return -1
+
+    return start
 
 
-# Driver program to test above function
-arr = [[6,4], [3,6], [7,3]]
-start = printTour(arr,3)
+start = path(city_distance_list, fuel_list, miles_per_gallon)
 if start == -1:
-    print("No Solution Possible !!!")
+    print("\nNo possible solution")
 else:
-    print("start = {}".format(start))
+    print("\nPreferred starting city = {}".format(start))
 
 # miles = (miles_per_gallon * fuel_gallons[ind])
 # next_city_fuel = (miles_per_gallon * fuel_gallons[ind + 1])
