@@ -1,3 +1,7 @@
+Name: Kelsey Dang
+Email: kdangdo2002@csu.fullerton.edu
+Project 1
+
 Algorithm 1:
 
 Enter city distances separated by spaces followed by <enter>
