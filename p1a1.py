@@ -9,7 +9,9 @@ import itertools
 print("Algorithm 1\n")
 
 city_distance_list = []
+c = len(city_distance_list)
 fuel_list = []
+f = len(fuel_list)
 
 city_distance_list = [int(i) for i in input("\tEnter city distances: ").split()]
 
@@ -23,47 +25,26 @@ print("mpg: ", miles_per_gallon)
 
 def path(city_distance_list, fuel_list, miles_per_gallon):
     start = 0
+    deficit = 0
+    capacity = 0
 
-    for i in range(5):
-        if (miles_per_gallon * fuel_list[i]) >= city_distance_list[i + 1]:
-            start = i
-            break
+    for i in fuel_list:
+        capacity += (miles_per_gallon * fuel_list[i]) - city_distance_list[i + 1]
+        if (capacity < 0):
+            start = i + 1
+            deficit += capacity
+            capacity = 0
 
-    current_miles = 0
-
-    for i in range(start):
-        current_miles += (miles_per_gallon * fuel_list[i]) - city_distance_list[i + 1]
-
-        if (current_miles < 0):
-            i += 1
-
-            while (i < 5):
-                if (miles_per_gallon * fuel_list[i]) >= city_distance_list[i + 1]:
-                    start = i
-                    current_miles = 0
-                    break
-                i += 1
-
-        else:
-            i += 1
-
-    if (current_miles < 0):
+    if (capacity + deficit >= 0):
+        return start
+    else:
         return -1
 
-    for i in range(start):
-        current_miles += (miles_per_gallon * fuel_list[i]) - city_distance_list[i + 1]
-
-        if (current_miles < 0):
-            return -1
-
-    return start
-
-
 start = path(city_distance_list, fuel_list, miles_per_gallon)
-if start == -1:
+if (start == -1):
     print("\nNo possible solution")
 else:
-    print("\nPreferred starting city = {}".format(start))
+    print("\nPreferred starting city = ", start)
 
 # miles = (miles_per_gallon * fuel_gallons[ind])
 # next_city_fuel = (miles_per_gallon * fuel_gallons[ind + 1])
