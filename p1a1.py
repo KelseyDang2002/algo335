@@ -23,12 +23,12 @@ print("\ndistance: ", city_distance_list)
 print("fuel: ", fuel_list)
 print("mpg: ", miles_per_gallon)
 
-def path(city_distance_list, fuel_list, miles_per_gallon):
+def path(city_distance_list, fuel_list, miles_per_gallon, c, f):
     start = 0
     deficit = 0
     capacity = 0
 
-    for i in fuel_list:
+    for i in range(f):
         capacity += (miles_per_gallon * fuel_list[i]) - city_distance_list[i + 1]
         if (capacity < 0):
             start = i + 1
@@ -40,7 +40,7 @@ def path(city_distance_list, fuel_list, miles_per_gallon):
     else:
         return -1
 
-start = path(city_distance_list, fuel_list, miles_per_gallon)
+start = path(city_distance_list, fuel_list, miles_per_gallon, c, f)
 if (start == -1):
     print("\nNo possible solution")
 else:
