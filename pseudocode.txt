@@ -42,7 +42,7 @@ NOTES---------------------------------------------------------------------------
 # singly linked list implementation most likely
 
 
-Algorithm 2
+# Algorithm 2
 
 person1_schedule
 person1_daily
