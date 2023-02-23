@@ -1,9 +1,26 @@
 
-# Algorithm 1
+# Algorithm 1 pseudocode
 
 city_distance_list array
 fuel_gallons array
 miles_per_gallon integer
+
+def path
+  start = 0
+  d = 0
+  c = 0
+
+  for i in range
+    c = (mpg * fuel_list[i]) - city_distance_list[i]
+    if c < 0
+      increment start by 1
+      d = d + c
+      set c = 0
+
+  if c + d >= 0
+    return to start to traverse next index
+  else
+    return -1
 
 NOTES---------------------------------------------------------------------------
 # if mpg * fuel_gallons[i] >= city_distance_list[i + 1]
@@ -40,9 +57,9 @@ NOTES---------------------------------------------------------------------------
 #   return miles + next_city_fuel
 #
 # singly linked list implementation most likely
+--------------------------------------------------------------------------------
 
-
-# Algorithm 2
+# Algorithm 2 pseudocode
 
 person1_schedule
 person1_daily
