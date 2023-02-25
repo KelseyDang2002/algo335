@@ -18,6 +18,5 @@ Algorithm 2:
 
 Compile and run: >>>python3 p1a2.py
 
-Time efficiency of Algorithm 2: O(n*log(n)) = 2 + n + n + (n + 2) + (n + 2) + 1 + n*log(n)
-                                              + n + n + (n + 3) + (n + 3) + 2 + (n + 4) + (n + 2)
+Time efficiency of Algorithm 2: O(n*log(n)) = 2 + n + n + (n + 2) + (n + 2) + 1 + n*log(n) + n + n + (n + 3) + (n + 3) + 2 + (n + 4) + (n + 2)
 Method Used: Step Counting
