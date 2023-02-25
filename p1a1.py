@@ -1,9 +1,7 @@
-# Name: Kelsey Dang
+# Names: Kelsey Dang, Adam Sellers, Brian Escobar
 # Due Date: 2/26/23
 # Filename: p1a1.py
 # Project Name: Project 1 Algorithm 1
-
-print("Algorithm 1\n")
 
 # define city distance array and fuel array
 city_distance_list = []
@@ -27,6 +25,8 @@ def path(city_distance_list, fuel_list, miles_per_gallon):
         return start
     else:
         return -1 # if there is no solution
+
+print("Algorithm 1\n")
 
 # user enters city distances, fuel, and mpg
 city_distance_list = [int(i) for i in input("\tEnter city distances: ").split()]

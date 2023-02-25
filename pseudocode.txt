@@ -61,10 +61,60 @@ NOTES---------------------------------------------------------------------------
 
 # Algorithm 2 pseudocode
 
-person1_schedule
-person1_daily
+# Combine two lists
+for each person:
+    append current person's list to combined_list
 
-person2_schedule
-person2_daily
+# In-place selection sort the combined list (O(n^2))
+<unsorted zone> = combined_list
+<sorted zone> = empty
+while <unsorted zone> IS NOT empty:
+    least_index = <index of earliest end time in unsorted zone>
+    <swap combined_list[least_index] to the end of the unsorted zone>
+    <remove the least element from the unsorted zone>
+    <add the least element to the sorted zone>
+combined_list = <sorted zone>
 
-duration
+# Get the daily activity that starts the latest
+latest_start_time = person 1's start time
+for each person's daily activity list:
+    if current_time > latest_start_time
+        latest_start_time = current_time
+
+# Get the daily activity that ends the earliest
+earliest_end_time  = person 1's end time
+for each person's daily activity list:
+    if current time < earliest_end_time
+        earliest_end_time = current_time
+
+# Kill events that start before the latest start time (since sorted, stop looping once a time passes the check)
+for each element in combined_list:
+    if element_start_time < latest_start_time
+        remove element
+    else
+        break
+
+# Kill events that end after the earliest end time (since sorted, stop looping once a time passes the check)
+for each element in combined_list in descending order:
+    if element_end time > earliest_end_time
+        remove element
+    else
+        break
+
+# Add latest start time to the front of the list as an event of [TIME,TIME]
+start_event = [latest_start_time, latest_start_time]
+combined_list.insert(position 0, start_event)
+
+# Add latest end time to the back of the list as an event of [TIME,TIME]
+end_event = [earliest_end_time, earliest_end_time]
+combined_list.append(end_event)
+
+# The Magic Move - Take the end time of one event and the start of the next to inverse the unavailability events, to availability events
+# Kill events that are below the meeting duration (negative times also get killed)
+for each element in combined_list
+    element[0] = combined_list[i].end_time
+    element[1] = combined_list[i+1].start time
+    if element[1] - element[0] < duration_of_meeting
+        remove element
+    else
+        print element
