@@ -1,6 +1,7 @@
 Names: Kelsey Dang, Adam Sellers, Brian Escobar
 Emails: kdangdo2002@csu.fullerton.edu
         adamsellers2020@gmail.com
+        brianescobar523@gmail.com
 Project 1
 --------------------------------------------------------------------------------
 Algorithm 1:
