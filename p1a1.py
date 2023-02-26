@@ -11,17 +11,17 @@ fuel_list = []
 def path(city_distance_list, fuel_list, miles_per_gallon):
 
     start = 0 # starting index initially at 0
-    deficit = 0 # when value of capacity is negative it is stored in deficit
-    capacity = 0 # capacity intially at 0
+    shortage = 0 # when value of fuel is negative it is stored in shortage
+    fuel = 0 # fuel intially at 0
 
     for i in range(5):
-        capacity += (miles_per_gallon * fuel_list[i]) - city_distance_list[i] # formula
-        if (capacity < 0): # if capacity is negative then increment to change starting city
+        fuel += (miles_per_gallon * fuel_list[i]) - city_distance_list[i] # formula
+        if (fuel < 0): # if fuel is negative then increment to change starting city
             start = i + 1
-            deficit += capacity # calculate deficit
-            capacity = 0 # reset car fuel to 0 after changing city
+            shortage += fuel # calculate shortage
+            fuel = 0 # reset car fuel to 0 after changing city
 
-    if (capacity + deficit >= 0): # if deficit is >= 0 then traverse to next city
+    if (fuel + shortage >= 0): # if fuel + shortage is >= 0 then traverse to next city
         return start
     else:
         return -1 # if there is no solution
