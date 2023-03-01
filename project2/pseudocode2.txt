@@ -1,12 +1,54 @@
 
 Algorithm 1 pseudocode:
 
+Sample Input:
+A = ["thismetoaklandrialtofullertonmarcolongchinofresnovallejoclovissimithound"]
+B = ['marco', 'clovis', 'rialto', 'oakland']
+
+user inputs array A of cities (concatenated as one string)
+user inputs array B of the cities to find in string (each city has an index)
+
+function:
+read array B
+read array A
+
+loop all elements in B:
+if an element of B is found in A:
+  output index of the first letter of the element
+  append to output_order array
+  output the city name that was found
+  append to output_array array
+
+print output_order array
+print output_array array
 --------------------------------------------------------------------------------
 
 Algorithm 2 pseudocode:
+
+Sample Inputs and Outputs:
+"ddd" becomes "3d"
+"heloooooooo there" becomes "hel8o there"
+"choosemeeky and tuition-free" becomes "ch2osem2eky and tuition-fr2e"
 
 --------------------------------------------------------------------------------
 
 Algorithm 3 pseudocode:
 
+Sample Input:
+all_lists = [ [2, 5, 9, 21], [-1, 0, 2], [-10, 81, 121], [4, 6, 12, 20, 150] ]
+
+user enters elements into 4 dynamic lists
+
+append the 4 lists into another list called all_lists (commas separate the 4 lists)
+
+print all_lists
+
+function:
+appends all the elements of each of the 4 lists into one big list where
+the elements are the sum of the elements of the 4 lists
+
+function:
+sort big list from ascending order (smallest to largest)
+
+print the sorted big list
 --------------------------------------------------------------------------------
