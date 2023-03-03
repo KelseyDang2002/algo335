@@ -14,9 +14,6 @@ B = ['marco', 'clovis', 'rialto', 'oakland']
 3A = ["torranceoaklandrialtomarcooxnardchinofresnoirvineclovissimiorange"]
 3B = ['oxnard', 'irvine', 'orange', 'marco']
 
-user inputs array A of cities (concatenated as one string)
-user inputs array B of the cities to find in string (each city has an index)
-
 function:
 read array B
 read array A
