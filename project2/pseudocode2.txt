@@ -1,9 +1,18 @@
 
 Algorithm 1 pseudocode:
 
-Sample Input:
+Sample Inputs:
 A = ["thismetoaklandrialtofullertonmarcolongchinofresnovallejoclovissimithound"]
 B = ['marco', 'clovis', 'rialto', 'oakland']
+
+1A = ["sanoaklandrialtofullertonmarcolongbreacoronamodestoclovissimithousand"]
+1B = ['brea', 'modesto', 'clovis', 'corona']
+
+2A = ["marcopolmonafremontrialtofullertonmarcolongfresnochinoclovissimisalinas"]
+2B = ['fullerton', 'chino', 'fremont', 'fresno']
+
+3A = ["torranceoaklandrialtomarcooxnardchinofresnoirvineclovissimiorange"]
+3B = ['oxnard', 'irvine', 'orange', 'marco']
 
 user inputs array A of cities (concatenated as one string)
 user inputs array B of the cities to find in string (each city has an index)
@@ -34,14 +43,18 @@ Sample Inputs and Outputs:
 
 Algorithm 3 pseudocode:
 
-Sample Input:
-all_lists = [ [2, 5, 9, 21], [-1, 0, 2], [-10, 81, 121], [4, 6, 12, 20, 150] ]
+Sample Inputs:
+array1 = [ [2, 5, 9, 21], [-1, 0, 2], [-10, 81, 121], [4, 6, 12, 20, 150] ]
+
+array2 = [ [10, 17, 18, 21, 29], [-3, 0, 3, 7, 8, 11], [81, 88, 121, 131], [9, 11, 12, 19, 29] ]
+
+array3 = [ [-4, -2, 0, 2, 7], [4, 6, 12, 14], [10, 15, 25], [5, 6, 10, 20, 24] ]
 
 user enters elements into 4 dynamic lists
 
 append the 4 lists into another list called all_lists (commas separate the 4 lists)
 
-print all_lists
+print array
 
 function:
 appends all the elements of each of the 4 lists into one big list where
