@@ -47,18 +47,18 @@ else:
 
 # function
 def Algorithm1(arr_A, arr_B):
-    for city in arr_B: # loop cities in arr_B
+    for city in arr_B: # loop cities in arr_B - O(n)
         if city in arr_A[0]: # if city is in arr_A
-            index = arr_A[0].index(city) # get index where city shows up in arr_A
+            index = arr_A[0].index(city) # get index where city shows up in arr_A - O(n)
             pair = [index, city] # group index and city in a pair array
             temp_array.append(pair) # append pair to a temporary array
         else:
             print("element not in arr_A") # if city is not in arr_A
             break
 
-    temp_array.sort() # sort the temporary array by index where city appears in arr_A
+    temp_array.sort() # sort the temporary array by index where city appears in arr_A - O(n*log(n)
 
-    for index, city in temp_array: # loop temporary array
+    for index, city in temp_array: # loop temporary array - O(n)
         order_array.append(index) # append the index to order_array
         output_array.append(city) # append city to output_array
 
