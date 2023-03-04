@@ -34,6 +34,11 @@ ________________________________________________________________________________
 Algorithm 1:
 
 Compile and run: >>>python3 p2a1.py
+
+Enter integer of 1, 2, 3, or 4 followed by <enter>
+
+Time efficiency of Algorithm 1: O(n^2) = (n*(1 + n + 2)) + (1 + 2) + (n*log(n)) + (n + 2) + 2
+Method Used: Step Counting
 --------------------------------------------------------------------------------
 Algorithm 2:
 

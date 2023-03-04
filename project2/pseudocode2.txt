@@ -14,19 +14,23 @@ B = ['marco', 'clovis', 'rialto', 'oakland']
 3A = ["torranceoaklandrialtomarcooxnardchinofresnoirvineclovissimiorange"]
 3B = ['oxnard', 'irvine', 'orange', 'marco']
 
-function:
-read array B
-read array A
+there is going to be a menu of options to choose which arrays to run algorithm on
 
-loop all elements in B:
-if an element of B is found in A:
-  output index of the first letter of the element
-  append to output_order array
-  output the city name that was found
-  append to output_array array
+def function(arr_A, arr_B)
+    for city in arr_B
+        if city in arr_A
+            get index of arr_A where city shows up in arr_A
+            pair = [index, city]
+            append pair to temporary array
+        else:
+            if city not in arr_A
+            break
 
-print output_order array
-print output_array array
+    temp_array.sort()
+
+    for index, city in temp_array
+        append index to order_array
+        append city to output_array
 --------------------------------------------------------------------------------
 
 Algorithm 2 pseudocode:
