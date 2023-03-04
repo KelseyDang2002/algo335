@@ -25,6 +25,7 @@ option = int(input("\n\tSelect option (1-4): "))
 
 order_array = []
 output_array = []
+temp_array = []
 
 if (option == 1):
     arr_A = ["thismetoaklandrialtofullertonmarcolongchinofresnovallejoclovissimithound"]
@@ -41,13 +42,24 @@ elif (option == 4):
 else:
     print("Invalid option\n")
 
-for i in arr_B: # O(n)
-    if i in arr_A[0]:
-        index = arr_A[0].index(i) #O(n)
-        city = i
+def Algorithm1(arr_A, arr_B):
+    for city in arr_B: # O(n)
+        if city in arr_A[0]:
+            index = arr_A[0].index(city) #O(n)
+            pair = [index, city]
+            temp_array.append(pair)
+        else:
+            print("element not in arr_A")
+            break
+
+    temp_array.sort() # O(n*log(n))
+
+    for index, city in temp_array: # O(n)
         order_array.append(index)
         output_array.append(city)
 
-order_array.sort() # O(n*log(n)) <- worst case
-print("\n\torder_array = ", order_array)
-print("\toutput_array = ", output_array)
+    # print("\ntemp_array = ", temp_array)
+    print("\norder_array = ", order_array)
+    print("output_array = ", output_array)
+
+Algorithm1(arr_A, arr_B) # O(n^2) <- worst case
