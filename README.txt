@@ -26,6 +26,8 @@ Time efficiency of Algorithm 2: O(n*log(n)) = 2 + n + n + (n + 2) + (n + 2) + 1 
 Method Used: Step Counting
 --------------------------------------------------------------------------------
 
+
+
 Project 2
 
 Names: Kelsey Dang

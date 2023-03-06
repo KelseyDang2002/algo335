@@ -62,9 +62,8 @@ def Algorithm1(arr_A, arr_B):
         order_array.append(index) # append the index to order_array
         output_array.append(city) # append city to output_array
 
-    # display order_array and output_array
-    # both arrays should be ordered by appearance in arr_A
-    print("\norder_array = ", order_array)
-    print("output_array = ", output_array)
-
 Algorithm1(arr_A, arr_B) # function call
+# display order_array and output_array
+# both arrays should be ordered by appearance in arr_A
+print("\norder_array = ", order_array)
+print("output_array = ", output_array)
