@@ -11,35 +11,19 @@ print("\nInput string: ", string)
 
 output_string = ""
 
-# test
-# C = 2
-# res = []
-# curr, cnt = None, 0
-#
-# for chr in string:
-#     if chr == curr:
-#         cnt += 1
-#     else:
-#         curr, cnt = chr, 1
-#
-#     if chr == C:
-#         res.append(C * chr)
-#
-# print("Output: " + str(res))
-
 # function
 def Algorithm2(string, output_string):
-    string.split() # separate characters from whitespaces
+    string.split() # separate characters from whitespaces - O(n)
 
     for i in string: # loop through each character in string
         if (i not in output_string):
-            num = string.count(i) # count number of characters
+            num = string.count(i) # count number of characters - O(n)
 
-            if num == 1: # if only 1 character
+            if (num >= 2):
+                output_string += str(num) # add count of characters to output string - O(n^2)
                 output_string += i # add character to output string
 
-            if num > 1: # if 2 or more characters
-                output_string += str(num) # add count of characters to output string
+            if (num == 1):
                 output_string += i # add character to output string
 
     print("Output string: ", output_string) # print output string
