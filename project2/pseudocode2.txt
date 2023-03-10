@@ -40,6 +40,30 @@ Sample Inputs and Outputs:
 "heloooooooo there" becomes "hel8o there"
 "choosemeeky and tuition-free" becomes "ch2osem2eky and tuition-fr2e"
 
+def function(input_string):
+    output_string
+    i = 0
+
+    while loop when i <= string length - 1
+          count starting at 1
+          char = the letter at position i of string
+          j = i
+
+          while loop when j < string length - 1
+              if char is the same as next char then count
+                  increment count by 1
+                  j = j + 1
+              else:
+                  break
+
+        if char is counted once:
+            append the char to output_string
+
+        if char counted 2 or more times in a row
+            append the number of times char is counted and also the char to output_string
+
+    return output_string
+
 --------------------------------------------------------------------------------
 
 Algorithm 3 pseudocode:

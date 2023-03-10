@@ -5,27 +5,38 @@
 
 print("Algorithm 2\n")
 
-string = input("\tEnter a string: ")
+string = input("\tEnter a string: ") # user inputs a string
 
-print("\nInput string: ", string)
-
-output_string = ""
+print("\nInput string: ", string) # print user input
 
 # function
-def Algorithm2(string, output_string):
-    string.split() # separate characters from whitespaces - O(n)
+def Algorithm2(string):
+    output_string = "" # define output string
+    i = 0 # index i starting at 0
 
-    for i in string: # loop through each character in string
-        if (i not in output_string):
-            num = string.count(i) # count number of characters - O(n)
+    while (i <= len(string) - 1): # while loop when i <= string length - 1 - O(n)
+        count = 1 # count starting at 1
+        char = string[i] # char is the letter at position i of string
+        j = i # set index i equal to index j
 
-            if (num >= 2):
-                output_string += str(num) # add count of characters to output string - O(n^2)
-                output_string += i # add character to output string
+        while (j < len(string) - 1): # while loop when j < string length - 1 - O(n)
+            if (string[j] == string[j + 1]): # if char is the same as next char then count
+                count = count + 1 # increment count by 1
+                j = j + 1 # increment index j by 1
+            else:
+                break
 
-            if (num == 1):
-                output_string += i # add character to output string
+        if (count == 1): # if only 1 char is counted
+            output_string = output_string + char # append the char into output string
+            i = j + 1 # incremnt index i by 1
 
-    print("Output string: ", output_string) # print output string
+        if (count >= 2): # if 2 or more char counted in a row
+            # append the number of chars counted and the corresponding char right after
+            # into output string
+            output_string = output_string + str(count) + char # str() = O(m*n) or O(n^2)
+            i = j + 1 # increment index i by 1
 
-Algorithm2(string, output_string) # function call
+    return output_string
+
+output_string = Algorithm2(string) # function call
+print("Output string: ", output_string) # print output string

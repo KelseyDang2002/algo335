@@ -45,6 +45,12 @@ Method Used: Step Counting
 Algorithm 2:
 
 Compile and run: >>>python3 p2a2.py
+
+Enter string followed by <enter>
+*String characters are limited to lowercase letters and spaces only*
+
+Time efficiency of Algorithm 2: O(n^2) = 2 + ((n + 3)*(n + 3 + 2)) + (1 + 2) + (1 + (n^2) + 1)
+Method Used: Step Counting
 --------------------------------------------------------------------------------
 Algorithm 3:
 
