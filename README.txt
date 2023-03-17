@@ -30,8 +30,10 @@ Method Used: Step Counting
 
 Project 2
 
-Names: Kelsey Dang
+Names: Kelsey Dang, Adam Sellers, Brian Escobar
 Emails: kdangdo2002@csu.fullerton.edu
+        adamsellers2020@gmail.com
+        brianescobar523@gmail.com
 ________________________________________________________________________________
 Algorithm 1:
 
