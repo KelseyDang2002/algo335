@@ -75,18 +75,42 @@ array2 = [ [10, 17, 18, 21, 29], [-3, 0, 3, 7, 8, 11], [81, 88, 121, 131], [9, 1
 
 array3 = [ [-4, -2, 0, 2, 7], [4, 6, 12, 14], [10, 15, 25], [5, 6, 10, 20, 24] ]
 
-user enters elements into 4 dynamic lists
+Input: n sorted lists in one array of lists
+Output: 1 list with the sorted elements from all the lists
 
-append the 4 lists into another list called all_lists (commas separate the 4 lists)
+//Combine n lists
+for each list in list_of_lists:
+    append current list to combined_list
 
-print array
+//Heap Sort Function O(log(n))
+def heap_sort(list, n=length, i=root)
+    initialize largest as root
+    initialize left_node as (2*i + 1)
+    initialize right_node as (2*i + 2)
 
-function:
-appends all the elements of each of the 4 lists into one big list where
-the elements are the sum of the elements of the 4 lists
+    if list[root] < list[left_node]:
+        largest = left_node
 
-function:
-sort big list from ascending order (smallest to largest)
+    if list[root] < list[right_node]:
+        largest = right_node
 
-print the sorted big list
+    if largest != root:
+        swap(list[root], list_largest)
+
+    // Recursively call heap_sort with the new root
+        heap_sort(list, n=length, i=largest)
+
+//Heap Creation Function - Calls heap_sort 2n times making it O(2n*log(n)) - This is the main function
+def heap_create(list)
+
+    loop through i = (parent node to -1) in reverse:
+        heap_sort(list, length, i)
+
+    loop through i = (child node to 0) in reverse:
+        swap(list[i], list[0])
+        heap_sort(list, i, 0)
+
+// Driver
+master_list = list_merge(all_lists)
+heap_create(master_list)
 --------------------------------------------------------------------------------

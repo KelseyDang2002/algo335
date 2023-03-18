@@ -57,4 +57,9 @@ Method Used: Step Counting
 Algorithm 3:
 
 Compile and run: >>>python3 p2a3.py
+
+Enter integer of 1, 2, or 3 followed by <enter>
+
+Time efficiency of Algorithm 2: O(n*log(n)) = (1 + (n + 1) + 1) + (3 + 2 + 2 + (2 + log(n))) + (1 + (n + n*log(n)) + (n + 1 + n*log(n)))
+Method Used: Step Counting
 --------------------------------------------------------------------------------
