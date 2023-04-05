@@ -63,3 +63,18 @@ Enter integer of 1, 2, or 3 followed by <enter>
 Time efficiency of Algorithm 2: O(n*log(n)) = (1 + (n + 1) + 1) + (3 + 2 + 2 + (2 + log(n))) + (1 + (n + n*log(n)) + (n + 1 + n*log(n)))
 Method Used: Step Counting
 --------------------------------------------------------------------------------
+
+
+
+Project 3
+Name: Kelsey Dang
+Email: kdangdo2002@csu.fullerton.edu
+________________________________________________________________________________
+Algorithm 1: Exhaustive Search
+
+Compile and run: >>>python3 exhaustive.py
+--------------------------------------------------------------------------------
+Algorithm 2: Dynamic Programming
+
+Compile and run: >>>python3 dynamic.py
+--------------------------------------------------------------------------------
