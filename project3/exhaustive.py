@@ -48,11 +48,13 @@ def soccer_exhaustive(matrix, r, c):
         for k in range(0, (length - 1) + 1):
             bit = (bits >> k) & 1
             if bit == 1:
-                candidate.add(right)
+                candidate.add(matrix[i][j + 1])
             else:
-                candidate.add(down)
+                candidate.add(matrix[i + 1][j])
         if (matrix[0][0] == 'x' or matrix[r - 1][c - 1] == 'x'):
             return 0
-        if candidate stays inside grid, never crosses an X cell, and ends at (r-1,c-1):
+        if candidate stays inside grid, never crosses an X cell, and ends at (r - 1,c - 1):
             counter++
     return counter
+
+soccer_exhaustive(matrix, r, c)
