@@ -40,21 +40,19 @@ for i in range(r): # loop rows
     print("") # print empty space
 
 # exhaustive search function
-def soccer_exhaustive(matrix, r, c):
+def soccer_exhaustive(matrix, i, j):
      length = r + c - 2
      counter = 0
      for bits in range(0, (pow(2, length) - 1) + 1):
-        candidate = []
+        candidate = [(0, 0)]
         for k in range(0, (length - 1) + 1):
             bit = (bits >> k) & 1
             if bit == 1:
-                candidate.add(matrix[i][j + 1])
+                candidate.append((i, j + 1))
             else:
-                candidate.add(matrix[i + 1][j])
-        if (matrix[0][0] == 'x' or matrix[r - 1][c - 1] == 'x'):
-            return 0
-        if candidate stays inside grid, never crosses an X cell, and ends at (r - 1,c - 1):
-            counter++
-    return counter
+                candidate.append((i + 1, j))
+        if candidate in range(matrix) and (i, j) != 'x' and (r - 1, c - 1) == '.':
+            counter += 1
+        return counter
 
-soccer_exhaustive(matrix, r, c)
+soccer_exhaustive(matrix, 0, 0)
