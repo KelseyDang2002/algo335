@@ -41,18 +41,19 @@ for i in range(r): # loop rows
 
 # exhaustive search function
 def soccer_exhaustive(matrix, i, j):
-     length = r + c - 2
-     counter = 0
-     for bits in range(0, (pow(2, length) - 1) + 1):
-        candidate = [(0, 0)]
-        for k in range(0, (length - 1) + 1):
+    length = r + c - 2
+    counter = 0
+    for bits in range(0, pow(2, length)):
+        candidate = []
+        for k in range(0, length):
             bit = (bits >> k) & 1
             if bit == 1:
-                candidate.append((i, j + 1))
+                candidate.add(1)
             else:
-                candidate.append((i + 1, j))
-        if candidate in range(matrix) and (i, j) != 'x' and (r - 1, c - 1) == '.':
+                candidate.add(0)
+        if candidate != 'x' and candidate == '.':
             counter += 1
-        return counter
+    return print(counter)
 
+print("\nPaths found: ", end = "")
 soccer_exhaustive(matrix, 0, 0)

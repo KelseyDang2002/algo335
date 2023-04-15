@@ -65,8 +65,9 @@ print("Algorithm 2: Dynamic Programming\n")
 def findPaths(m, path, i, j):
     r = len(m)
     c = len(m[0])
+    global counter
     if i == r-1 and j == c-1:
-        print(path+[m[i][j]])
+        counter += 1
         return
 
     path.append(m[i][j])
@@ -81,6 +82,9 @@ def findPaths(m, path, i, j):
     path.pop()
 
 matrix = []
+path = []
+counter = 0
+
 r = int(input("\tEnter number of rows: ")) # row input
 c = int(input("\tEnter number or columns: ")) # column input
 
@@ -100,5 +104,5 @@ for i in range(r): # loop rows
 
 print("\n", end = "")
 
-path = []
 findPaths(matrix, path, 0, 0)
+print("Paths found: ", counter)
