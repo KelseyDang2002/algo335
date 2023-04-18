@@ -48,9 +48,9 @@ def soccer_exhaustive(matrix, i, j):
         for k in range(0, length):
             bit = (bits >> k) & 1
             if bit == 1:
-                candidate.add(1)
+                candidate.append(1)
             else:
-                candidate.add(0)
+                candidate.append(0)
         if candidate != 'x' and candidate == '.':
             counter += 1
     return print(counter)
