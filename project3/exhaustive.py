@@ -5,21 +5,6 @@
 
 print("Algorithm 1: Exhaustive Search\n")
 
-# input: a r x c matrix F, where each cell is either passable or impassable (X);
-# and F[0][0] = .
-#
-# . . . . . . x . x
-# x . . . . . . . .
-# . . . x . . . x .
-# . . x . . . . x .
-# . x . . . . x . .
-# . . . . x . . . .
-# . . x . . . . . x
-# . . . . . . . . .
-#
-# output: the number of different paths starting at (0,0) and ending at (r-1,c-1);
-# where each step is either start, right move, or down move; and does not visit any X cell
-
 r = int(input("\tEnter number of rows: ")) # row input
 c = int(input("\tEnter number or columns: ")) # column input
 

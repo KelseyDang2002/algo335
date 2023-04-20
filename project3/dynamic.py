@@ -37,15 +37,15 @@ def soccer_dynamic(matrix, r, c):
     # general cases
     for i in range(r): # loop rows
         for j in range(c): # loop columns
-            if matrix[i][j] == 'x':
-                A[i][j] = 0
+            if matrix[i][j] == 'x': # if position is impassable
+                A[i][j] = 0 # position in A matrix = 0
                 continue
-            above = left = 0
-            if i > 0 and matrix[i - 1][j] == '.':
-                above = A[i - 1][j]
-            if j > 0 and matrix[i][j - 1] == '.':
-                left = A[i][j - 1]
-            A[i][j] += above + left
-    return print("\nPaths found: ", A[r - 1][c - 1])
+            above = left = 0 # set above and left = 0
+            if i > 0 and matrix[i - 1][j] == '.': # if down position is passable
+                above = A[i - 1][j] # valid down move, update A
+            if j > 0 and matrix[i][j - 1] == '.': # if right position is passable
+                left = A[i][j - 1] # valid right move, update A
+            A[i][j] += above + left # add position to A
+    return print("\nPaths found: ", A[r - 1][c - 1]) # return number of paths found
 
 soccer_dynamic(matrix, r, c) # function call
