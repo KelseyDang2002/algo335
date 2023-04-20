@@ -1,4 +1,4 @@
-# Name: Kelsey Dang
+# Names: Kelsey Dang, Adam Sellers, Brian Escobar
 # Due Date: 4/21/23
 # Filename: exhaustive.py
 # Project 3 Exhaustive Search Algorithm
