@@ -3,6 +3,8 @@
 # Filename: exhaustive.py
 # Project 3 Exhaustive Search Algorithm
 
+import bitstring
+
 print("Algorithm 1: Exhaustive Search\n")
 
 r = int(input("\tEnter number of rows: ")) # row input
@@ -25,10 +27,10 @@ for i in range(r): # loop rows
     print("") # print empty space
 
 # exhaustive search function
-def soccer_exhaustive(matrix, i, j):
+def soccer_exhaustive(matrix, i, j, r, c):
     length = r + c - 2
     counter = 0
-    for bits in range(0, pow(2, length)):
+    for bits in range(0, 2**length):
         candidate = []
         for k in range(0, length):
             bit = (bits >> k) & 1
@@ -36,9 +38,9 @@ def soccer_exhaustive(matrix, i, j):
                 candidate.append(1)
             else:
                 candidate.append(0)
-        if candidate != 'x' and candidate == '.':
+        if  i == r-1 and j == c-1:
             counter += 1
     return print(counter)
 
 print("\nPaths found: ", end = "")
-soccer_exhaustive(matrix, 0, 0)
+soccer_exhaustive(matrix, i, j, r, c) # function call
