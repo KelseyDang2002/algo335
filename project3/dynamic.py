@@ -12,26 +12,15 @@ c = int(input("\tEnter number or columns: ")) # column input
 
 matrix = np.zeros((r, c)) # initialize matrix
 
+# define impassable positions
 player_positions = [(0,6),(0,8),(1,0),(2,3),(2,7),(3,2),(3,7),(4,1),(4,6),(5,4),(6,2),(6,8)]
 
+# set impassable positions in matrix to equal 1
 index = np.r_[player_positions].T
 matrix[index[0], index[1]] = 1
 
 print("\nMatrix: ")
-print(matrix)
-# print("\nCreate", r, "x", c, "matrix by entering . or x")
-# print("for each cell separated by white spaces:\n")
-#
-# for i in range(r): # loop rows
-#     arr = list(input().split()) # input . or x for cells of matrix row by row
-#     matrix.append(arr) # append to arr (row-line for matrix)
-#
-# print("\nMatrix: ")
-#
-# for i in range(r): # loop rows
-#     for j in range(c): # loop columns
-#         print(matrix[i][j], end = " ") # print each cell of matrix
-#     print("") # print empty space
+print(matrix) # print matrix
 
 # function, parameters: matrix, number of rows, number of columns
 def soccer_dynamic(matrix, r, c):
