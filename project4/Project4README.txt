@@ -6,12 +6,18 @@ ________________________________________________________________________________
 Algorithm 1A:
 
 Compile and run: >>>python3 fib_recursive.py
+
+Time efficiency:
 --------------------------------------------------------------------------------
 Algorithm 1B:
 
 Compile and run: >>>python3 fib_golden_ratio.py
+
+Time efficiency:
 --------------------------------------------------------------------------------
 Algorithm 2:
 
 Compile and run: >>>python3 largest_sum.py
+
+Time efficiency:
 --------------------------------------------------------------------------------
