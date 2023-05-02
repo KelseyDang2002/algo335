@@ -7,7 +7,7 @@ Algorithm 1A:
 
 Compile and run: >>>python3 fib_recursive.py
 
-Time efficiency:
+Time efficiency: O(2^n) = O((1 + 1) + (1 + 1) + 2^n)
 --------------------------------------------------------------------------------
 Algorithm 1B:
 
