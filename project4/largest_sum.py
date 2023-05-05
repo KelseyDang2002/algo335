@@ -14,8 +14,8 @@ from sys import maxsize
 
 print("Algorithm 2: Largest Sum Subarray\n")
 
-V = [int(i) for i in input("Enter integers for array: ").split()]
-n = len(V)
+V = [int(i) for i in input("Enter integers for array: ").split()] # user input
+n = len(V) # length of V
 print("Input =", V)
 
 # function: input V and lenth of V (n) as parameters
@@ -29,7 +29,7 @@ def largest_sum(V, n):
 
     # loop through array V
     for i in range(0, n):
-        max_end += V[i] # calculate max of consecutive integers in V
+        max_end += V[i] # calculate max sum of consecutive integers in V
         if max_curr < max_end: # if max_end greater than current largest sum
             max_curr = max_end
             b = start # set beginning index of largest sum
