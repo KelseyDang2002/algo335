@@ -1,4 +1,4 @@
-# Name: Kelsey Dang
+# Names: Kelsey Dang, Adam Sellers, Brian Escobar
 # Due Date: 5/12/23
 # Filename: fib_recursive.py
 # Project 4 Fibonacci Exhaustive Pattern
