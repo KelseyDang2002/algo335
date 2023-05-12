@@ -17,5 +17,5 @@ def fib_recursive(n):
         return (fib_recursive(n - 1) + fib_recursive(n - 2))
 
 n = int(input("Enter integer for nth term: ")) # user inputs an integer
-output = fib_recursive(n) # funcation call
+output = fib_recursive(n) # function call
 print("Position", n, "of fibonacci sequence: ", output) # print output
